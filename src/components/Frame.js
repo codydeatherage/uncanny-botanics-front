@@ -6,15 +6,10 @@ import { styled } from '@mui/system';
 import IconButton from '@mui/material/IconButton';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
-const Container = styled('div')({
-    width: '100vw',
-    border: '1px solid blue',
-    padding: '5vh 5vw',
-})
-
 const CategoryCard = styled(Card)({
-    maxWidth: 300,
+    width: 300,
     height: 300,
+    borderRadius: 10,
     border: '1px solid red',
 })
 
@@ -32,18 +27,17 @@ const CategoryCardContent = styled(CardContent)({
 
 const CardTypography = styled(Typography)({
     padding: 0,
-    width: 100,
+    width: 150,
+    // border: '1px solid green',
 })
 
-const Frame = () => {
+const Frame = ({ title }) => {
   return (
-    <Container>
         <CategoryCard>
             <CategoryCardMedia />
             <CategoryCardContent>
                 <CardTypography>
-                    {/* general variable to be changed between Succs, Plants, and Flowers */}
-                    SUCCS
+                    {title}
                     {/* <CardActions> */}
                         <IconButton>
                             <ArrowRightAltIcon />
@@ -53,7 +47,6 @@ const Frame = () => {
                 
             </CategoryCardContent>
         </CategoryCard>
-    </Container>
 
   )
 }
