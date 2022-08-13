@@ -4,12 +4,15 @@ import { loadFull } from "tsparticles";
 import { Box, Button } from '@mui/material'
 import { styled } from '@mui/system'
 import img from '../succtents.svg'
+import bg from '../bg.jpg'
 
 const Container = styled(Box)({
     position: 'relative',
-    backgroundColor: '#212121',
+   /*  backgroundColor: '#212121', */
     height: '80vh',
     width: '100vw',
+    backgroundImage: `url(${bg})`,
+    backgroundRepeat: 'no-repeat',
 
     '& #tsparticles': {   // This is the id of the div created by the Particles component
         height: '80vh',
@@ -41,7 +44,8 @@ const TextContent  = styled(Box)({
     top: '20%',
     height: '60%',
     width: '40%',
-    textAlign: 'center',
+    textAlign: 'center',/* 
+    fontFamily: 'WinterPrincess', */
 
     '& h1':{
         fontSize: 70
@@ -89,6 +93,8 @@ const Home = () => {
                         color: {
                             value: "#212121",
                         },
+                        image:  `url(${bg})`,
+                        repeat: 'no-repeat',
                         size: '100%'
                     },
                     fpsLimit: 120,

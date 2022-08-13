@@ -1,29 +1,31 @@
 import React from 'react'
 import { Router, Route, Link } from 'react-router'
 import { Box } from '@mui/material'
+import { ThemeProvider } from '@mui/material/styles'
 import { styled } from '@mui/system'
 import NavBar from './components/NavBar'
 import Frame from './components/Frame'
-
 import Home from './components/Home'
-
 import FrameCard from './components/FrameCard'
-
+import theme from './theme'
 
 const App = () => {
   return (
-    <Box>
-      <NavBar />
+    <ThemeProvider theme={theme}>
+      <Box>
 
-      <Home></Home>
+        <NavBar />
 
-      <FrameCard>
-        <Frame title='Succulents'/>
-        <Frame title='Plants'/>
-        <Frame title='Flowers'/>
-      </FrameCard>
-      
-    </Box>
+        <Home></Home>
+
+        <FrameCard>
+          <Frame title='Succulents' />
+          <Frame title='Plants' />
+          <Frame title='Flowers' />
+        </FrameCard>
+
+      </Box>
+    </ThemeProvider >
   )
 }
 
