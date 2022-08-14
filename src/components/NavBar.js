@@ -5,7 +5,6 @@ import { AppBar, Box, Toolbar, Typography, IconButton, Icon } from '@mui/materia
 import icon from '../eye-plant.svg'
 import '../index.css'
 
-
 const ImgContainer = styled(Box)({
     margin: 'auto 0',
     height: '100%',
@@ -38,8 +37,6 @@ const NavLinks = styled(Box)({
     }
 })
 
-
-
 export default function NavBar() {
     return (
         <Box className="skinny-font" sx={{ flexGrow: 1, }}>
@@ -54,7 +51,6 @@ export default function NavBar() {
                         <h1>About</h1>
                         <h1>Contact Us</h1>
                     </NavLinks>
-
                 </Toolbar>
             </AppBar>
         </Box>

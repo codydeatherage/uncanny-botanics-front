@@ -8,6 +8,7 @@ import Frame from './components/Frame'
 import Home from './components/Home'
 import FrameCard from './components/FrameCard'
 import theme from './theme'
+import img1 from './darksucc.svg'
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
         <Home></Home>
 
         <FrameCard>
-          <Frame title='Succulents' />
+          <Frame title='Succulents' img={img1}/>
           <Frame title='Plants' />
           <Frame title='Flowers' />
         </FrameCard>

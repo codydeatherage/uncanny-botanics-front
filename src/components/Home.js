@@ -5,7 +5,7 @@ import { Box, Button } from '@mui/material'
 import { styled } from '@mui/system'
 import img from '../succtents.svg'
 import bg from '../bg.jpg'
-
+import '../index.css'
 const Container = styled(Box)({
     position: 'relative',
    /*  backgroundColor: '#212121', */
@@ -44,8 +44,9 @@ const TextContent  = styled(Box)({
     top: '20%',
     height: '60%',
     width: '40%',
-    textAlign: 'center',/* 
-    fontFamily: 'WinterPrincess', */
+    textAlign: 'center',
+    fontFamily: "Trirong",
+    backgroundColor: 'rgba(33,33,33, 0.5)',
 
     '& h1':{
         fontSize: 70
@@ -163,7 +164,7 @@ const Home = () => {
             <ImgContainer>
                 <img src={img} alt=""></img>
             </ImgContainer>
-            <TextContent>
+            <TextContent >
                 <h1>You have been called.</h1>
                 <h4>Enter into a world of green life and find something that speaks to you.</h4>
                 <ExploreButton variant="contained" color="success">Explore</ExploreButton>

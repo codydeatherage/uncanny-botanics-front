@@ -1,54 +1,64 @@
 //will contain 1 frame to be  containing photos of plants for sale
-
-import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-// import React from 'react'
+import { useState, useRef } from 'react'
+import { Card, CardContent, CardMedia, Typography, Slide, Box } from '@mui/material'
 import { styled } from '@mui/system';
-import IconButton from '@mui/material/IconButton';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import bg from '../card-bg.jpg'
 
-const CategoryCard = styled(Card)({
+const CategoryCard = styled(Card)(({ active }) => ({
     width: 300,
     height: 300,
+    position: 'relative',
     borderRadius: 10,
-    border: '1px solid red',
-})
+    filter: active ? 'invert(1)' : 'invert(0)',
+    backgroundImage: `url(${bg})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+}))
 
 const CategoryCardMedia = styled(CardMedia)({
     height: '80%',
-    borderBottom: '1px solid black',
+    '& img': {
+        height: 'auto',
+        width: '90%',
+        margin: '0 5%',
+    }
 })
 
 const CategoryCardContent = styled(CardContent)({
     padding: 0,
-    '& p':{
+    color: 'white',
+    '& p': {
+        fontSize: '2em',
         padding: 0,
     }
 })
 
 const CardTypography = styled(Typography)({
     padding: 0,
-    width: 150,
-    // border: '1px solid green',
+    width: 'fit-content',
+    textAlign: 'center',
+    margin: '0 auto'
 })
 
-const Frame = ({ title }) => {
-  return (
-        <CategoryCard>
-            <CategoryCardMedia />
-            <CategoryCardContent>
-                <CardTypography>
-                    {title}
-                    {/* <CardActions> */}
-                        <IconButton>
-                            <ArrowRightAltIcon />
-                        </IconButton>
-                    {/* </CardActions> */}
-                </CardTypography>
-                
-            </CategoryCardContent>
-        </CategoryCard>
+const Frame = ({ title, img }) => {
+    const [hovered, setHovered] = useState(false);
+    const containerRef = useRef(null);
 
-  )
+    return (
+        <CategoryCard ref={containerRef} active={hovered} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+            <CategoryCardMedia >
+                {img && <img src={img} alt="" />}
+            </CategoryCardMedia>
+            <CategoryCardContent >
+                <CardTypography> {`― ${title} ―`} </CardTypography>
+            </CategoryCardContent>
+            <Slide direction="up" in={hovered} container={containerRef.current}>
+                <Box sx={{ backgroundColor: 'rgba(21,21,21,0.5)', height: 300, width: 300, position: 'absolute', top: 0, filter: hovered ? 'invert(1)' : 'invert(0)' }}>
+                    werasdfsf
+                </Box>
+            </Slide>
+        </CategoryCard>
+    )
 }
 
 export default Frame
