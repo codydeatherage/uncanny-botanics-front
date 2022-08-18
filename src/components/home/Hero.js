@@ -95,7 +95,7 @@ const Hero = () => {
                         },
                         image:  `url(${bg})`,
                         repeat: 'no-repeat',
-                        size: '100%'
+                        size: 'cover'
                     },
                     fpsLimit: 120,
                     interactivity: {
