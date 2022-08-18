@@ -3,16 +3,16 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Box, Button } from '@mui/material'
 import { styled } from '@mui/system'
-import img from '../succtents.svg'
-import bg from '../bg.jpg'
-import '../index.css'
+import img from '../../assets/succtents.svg'
+import bg from '../../assets/bg.jpg'
+import '../../index.css'
 const Container = styled(Box)({
     position: 'relative',
-   /*  backgroundColor: '#212121', */
     height: '80vh',
     width: '100vw',
     backgroundImage: `url(${bg})`,
     backgroundRepeat: 'no-repeat',
+    marginBottom: 0,
 
     '& #tsparticles': {   // This is the id of the div created by the Particles component
         height: '80vh',
@@ -23,7 +23,6 @@ const Container = styled(Box)({
         padding: 0,
         zIndex: 0,
     }
-
 })
 
 const ImgContainer = styled(Box)({
@@ -68,7 +67,7 @@ const ExploreButton = styled(Button)({
     fontSize: 20
 })
 
-const Home = () => {
+const Hero = () => {
     const particlesInit = async (main) => {
         console.log(main);
         // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
@@ -173,4 +172,4 @@ const Home = () => {
     );
 }
 
-export default Home
+export default Hero

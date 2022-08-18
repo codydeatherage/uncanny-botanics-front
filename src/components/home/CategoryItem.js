@@ -1,8 +1,7 @@
-//will contain 1 frame to be  containing photos of plants for sale
 import { useState, useRef } from 'react'
 import { Card, CardContent, CardMedia, Typography, Slide, Box } from '@mui/material'
 import { styled } from '@mui/system';
-import bg from '../card-bg.jpg'
+import bg from '../../assets/card-bg.jpg'
 
 const CategoryCard = styled(Card)(({ active }) => ({
     width: 300,
@@ -15,7 +14,7 @@ const CategoryCard = styled(Card)(({ active }) => ({
     backgroundSize: 'cover',
 }))
 
-const CategoryCardMedia = styled(CardMedia)({
+const MediaContent = styled(CardMedia)({
     height: '80%',
     '& img': {
         height: 'auto',
@@ -24,7 +23,7 @@ const CategoryCardMedia = styled(CardMedia)({
     }
 })
 
-const CategoryCardContent = styled(CardContent)({
+const TextContent = styled(CardContent)({
     padding: 0,
     color: 'white',
     '& p': {
@@ -40,25 +39,34 @@ const CardTypography = styled(Typography)({
     margin: '0 auto'
 })
 
-const Frame = ({ title, img }) => {
+const SlideBox = styled(Box)({
+    backgroundColor: 'rgba(21,21,21,0.5)',
+    height: 300,
+    width: 300,
+    position: 'absolute',
+    top: 0,
+    color: 'white'
+})
+
+const CategoryItem = ({ title, img }) => {
     const [hovered, setHovered] = useState(false);
     const containerRef = useRef(null);
 
     return (
         <CategoryCard ref={containerRef} active={hovered} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-            <CategoryCardMedia >
+            <MediaContent >
                 {img && <img src={img} alt="" />}
-            </CategoryCardMedia>
-            <CategoryCardContent >
+            </MediaContent>
+            <TextContent >
                 <CardTypography> {`― ${title} ―`} </CardTypography>
-            </CategoryCardContent>
+            </TextContent>
             <Slide direction="up" in={hovered} container={containerRef.current}>
-                <Box sx={{ backgroundColor: 'rgba(21,21,21,0.5)', height: 300, width: 300, position: 'absolute', top: 0, filter: hovered ? 'invert(1)' : 'invert(0)' }}>
-                    werasdfsf
-                </Box>
+                <SlideBox>
+                    {title}
+                </SlideBox>
             </Slide>
         </CategoryCard>
     )
 }
 
-export default Frame
+export default CategoryItem

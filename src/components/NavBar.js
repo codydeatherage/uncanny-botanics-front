@@ -2,7 +2,7 @@ import React from 'react'
 import '../fonts/Winter-Princess.ttf'
 import { styled } from '@mui/system'
 import { AppBar, Box, Toolbar, Typography, IconButton, Icon } from '@mui/material'
-import icon from '../eye-plant.svg'
+import icon from '../assets/eye-plant.svg'
 import '../index.css'
 
 const ImgContainer = styled(Box)({
@@ -37,9 +37,9 @@ const NavLinks = styled(Box)({
     }
 })
 
-export default function NavBar() {
+export default function NavBar({children}) {
     return (
-        <Box className="skinny-font" sx={{ flexGrow: 1, }}>
+        <Box className="skinny-font" sx={{ flexGrow: 1, height: '100%', width: '100%' }}>
             <AppBar sx={{ maxHeight: 60, backgroundColor: '#212121' }} position="static">
                 <Toolbar >
                     <ImgContainer >
@@ -53,6 +53,7 @@ export default function NavBar() {
                     </NavLinks>
                 </Toolbar>
             </AppBar>
+            {children}
         </Box>
     )
 }
