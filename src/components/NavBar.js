@@ -44,6 +44,7 @@ const NavLinks = styled(Box)({
 
 export default function NavBar({ children }) {
     return (
+        <Box>
         <AppBar className="skinny-font" sx={{ maxHeight: 60, width: '100%', backgroundColor: '#212121' }} >
             <Toolbar>
                 <ImgContainer component={Link} to="/" >
@@ -59,8 +60,10 @@ export default function NavBar({ children }) {
                     <h1>Contact Us</h1>
                 </NavLinks>
             </Toolbar>
-            {children}
+            
         </AppBar>
+        {children}
+        </Box>
     )
 }
 
