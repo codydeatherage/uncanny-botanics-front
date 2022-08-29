@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Grid } from '@mui/material'
 import { styled } from '@mui/system'
+import Product from './Product'
 
 const Products = () => {
     return (
@@ -8,9 +9,22 @@ const Products = () => {
             sx={{
                 height: '500px',
                 minWidth: '480px',
-                outline: '1px solid red'
+                outline: '1px solid red',
+                display: 'flex',
+                gap: '25px',
+                padding: '10px',
+                flexWrap: 'wrap'
             }}
-        >No products listed</Box>
+        >
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+        </Box>
     )
 }
 

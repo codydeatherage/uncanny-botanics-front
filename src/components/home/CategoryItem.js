@@ -16,10 +16,12 @@ const CategoryCard = styled(Card)(({ active }) => ({
 
 const MediaContent = styled(CardMedia)({
     height: '80%',
+    objectFit: 'contain',
+    textAlign: 'center',
     '& img': {
-        height: 'auto',
-        width: '90%',
-        margin: '0 5%',
+        height: '80%',
+        width: 'auto',
+        marginTop: '2em',
     }
 })
 

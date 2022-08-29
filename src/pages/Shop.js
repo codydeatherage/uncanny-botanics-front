@@ -9,7 +9,7 @@ const Shop = () => {
         <Grid container spacing={1}
             sx={{
                 justifyContent: 'center',
-                paddingTop: '10px',
+                paddingTop: '80px',
                 color: 'white',
                 fontSize: '4em'
             }}
