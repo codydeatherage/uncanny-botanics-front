@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Grid, FormControl, FormControlLabel, Radio, RadioGroup, FormLabel, Slider } from '@mui/material'
+import { Box, Grid, FormControl, FormControlLabel, Radio, RadioGroup, FormLabel, Slider, Button } from '@mui/material'
 import { styled } from '@mui/system'
 const Form = styled(FormControl)({
     color: 'black',
@@ -45,6 +45,7 @@ const PrettoSlider = styled(Slider)({
         },
     },
 });
+
 
 const ProductFilters = () => {
     const [priceRange, setPriceRange] = useState([0, 600]);
@@ -105,6 +106,7 @@ const ProductFilters = () => {
                         aria-labelledby="price-range"
                     />
                 </Box>
+
             </Form>
 
         </Box>
