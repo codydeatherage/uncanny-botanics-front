@@ -10,7 +10,8 @@ import '../../index.css'
 const Container = styled(Box)({
     position: 'relative',
     height: '80vh',
-    width: '100vw',
+    left: 0,
+    right: 0,
     backgroundImage: `url(${bg})`,
     backgroundRepeat: 'no-repeat',
     zIndex: 0,
@@ -18,11 +19,10 @@ const Container = styled(Box)({
     flexWrap: 'nowrap',
     alignItems: 'center',
     marginTop: '60px',
-
+    padding: 0,
     '& #tsparticles': {
         height: '80vh',
         position: 'absolute',
-        width: '100%',
         left: 0,
         right: 0,
         margin: 0,
@@ -34,8 +34,9 @@ const Container = styled(Box)({
 const ImgContainer = styled(Box)({
     position: 'absolute',
     height: '100%',
-    width: '40%',
     zIndex: 9,
+    padding: 0,
+
     '& img': {
         position: 'relative',
         maxHeight: '700px',
@@ -67,7 +68,8 @@ const TextContent = styled(Box)({
     fontFamily: "Trirong",
     backgroundColor: 'rgba(33, 66, 44, 0.5)',
     zIndex: 99,
-    left: '55%',
+    left: '55%',/* 
+    border: '2px solid red', */
     '@media (max-width: 900px)': {
         left: '30%',
         tranform: 'translateX(-50%)',
