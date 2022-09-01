@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Box, Grid, FormControl, FormControlLabel, Radio, RadioGroup, FormLabel, Slider, Button } from '@mui/material'
+import { Box, FormControl, FormControlLabel, Radio, RadioGroup, FormLabel, Slider } from '@mui/material'
 import { styled } from '@mui/system'
 const Form = styled(FormControl)({
     color: 'black',
     fontFamily: 'WinterPrincess',
-    marginLeft: '5%'
+    paddingLeft: '5%'
 })
+
 /*https://mui.com/material-ui/react-slider/ */
 const PrettoSlider = styled(Slider)({
     color: '#52af77',
@@ -46,7 +47,6 @@ const PrettoSlider = styled(Slider)({
     },
 });
 
-
 const ProductFilters = () => {
     const [priceRange, setPriceRange] = useState([0, 600]);
     const handleChange = (e, value) => {
@@ -54,29 +54,14 @@ const ProductFilters = () => {
     }
 
     return (
-        <Box
-            sx={{
-                width: '100%',
-                minWidth: 'fit-content',
-                height: '500px',
-                border: '2px solid #212121'
-            }}
-        >
-            <Box
-                sx={{
-                    color: 'white',
-                    fontSize: '35px',
-                    paddingLeft: '5%',
-                    backgroundColor: '#212121'
-                }}
-            >Shop By</Box>
+        <Box width='100%' height='500px' border={'2px solid #212121'} >
+            <Box color='white' fontSize='35px' paddingLeft='5%' backgroundColor='#212121'>Shop By</Box>
             <Form>
                 <FormLabel id="categories-radio-group">Category</FormLabel>
                 <RadioGroup
                     aria-labelledby="categories-radio-group"
                     defaultValue="flowers"
                     name="categories-radio-group"
-
                 >
                     <FormControlLabel value="flowers" control={<Radio sx={{ padding: '2px 5%' }} />} label="Flowers" />
                     <FormControlLabel value="plants" control={<Radio sx={{ padding: '2px 5%' }} />} label="Plants" />
@@ -89,11 +74,9 @@ const ProductFilters = () => {
                 >
                     <FormControlLabel value="pet-friendly" control={<Radio sx={{ padding: '2px 5%' }} />} label="Pet-Friendly" />
                     <FormControlLabel value="easy-care" control={<Radio sx={{ padding: '2px 5%' }} />} label="Easy Care" />
-
                 </RadioGroup>
-
                 <FormLabel id="price-range">Price</FormLabel>
-                <Box sx={{ width: '300px' }}>
+                <Box sx={{ width: '90%', margin: 'auto' }}>
                     <PrettoSlider
                         getAriaLabel={() => 'Price range'}
                         value={priceRange}
@@ -106,9 +89,7 @@ const ProductFilters = () => {
                         aria-labelledby="price-range"
                     />
                 </Box>
-
             </Form>
-
         </Box>
     )
 }

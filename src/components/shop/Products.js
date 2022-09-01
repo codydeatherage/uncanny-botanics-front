@@ -1,20 +1,28 @@
 import React from 'react'
-import { Box, Grid } from '@mui/material'
-import { styled } from '@mui/system'
+import { Box } from '@mui/material'
 import Product from './Product'
 
 const Products = () => {
     return (
         <Box
             sx={{
-                height: '500px',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+                height: 'fit-content',
+                gap: '0.5em',
                 minWidth: '480px',
-                display: 'flex',
-                gap: '25px',
-                padding: '10px',
-                flexWrap: 'wrap'
+                border: '2px solid red',
+                justifyContent: 'center',
             }}
         >
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
             <Product />
             <Product />
             <Product />

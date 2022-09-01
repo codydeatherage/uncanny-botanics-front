@@ -68,8 +68,7 @@ const TextContent = styled(Box)({
     fontFamily: "Trirong",
     backgroundColor: 'rgba(33, 66, 44, 0.5)',
     zIndex: 99,
-    left: '55%',/* 
-    border: '2px solid red', */
+    left: '55%',
     '@media (max-width: 900px)': {
         left: '30%',
         tranform: 'translateX(-50%)',
