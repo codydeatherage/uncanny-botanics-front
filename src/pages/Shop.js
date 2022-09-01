@@ -9,7 +9,7 @@ const Shop = () => {
             container
             spacing={4}
             padding={0}
-            paddingTop={50}
+            paddingTop='50px'
             color='white'
             fontSize='4em'
             margin={0}
