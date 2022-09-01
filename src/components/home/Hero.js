@@ -6,17 +6,23 @@ import { styled } from '@mui/system'
 import img from '../../assets/succtents.svg'
 import bg from '../../assets/bg.jpg'
 import '../../index.css'
+
 const Container = styled(Box)({
     position: 'relative',
     height: '80vh',
     width: '100vw',
     backgroundImage: `url(${bg})`,
     backgroundRepeat: 'no-repeat',
-    marginBottom: 0,
+    zIndex: 0,
+    display: 'flex',
+    flexWrap: 'nowrap',
+    alignItems: 'center',
+    marginTop: '60px',
 
-    '& #tsparticles': {   // This is the id of the div created by the Particles component
+    '& #tsparticles': {
         height: '80vh',
         position: 'absolute',
+        width: '100%',
         left: 0,
         right: 0,
         margin: 0,
@@ -28,31 +34,50 @@ const Container = styled(Box)({
 const ImgContainer = styled(Box)({
     position: 'absolute',
     height: '100%',
-    width: '30%',
-
+    width: '40%',
+    zIndex: 9,
     '& img': {
+        position: 'relative',
+        maxHeight: '700px',
         height: '100%',
         width: 'auto',
-        margin: 'auto'
-    }
+        '@media (max-width: 900px)': {
+            width: '100%',
+            height: '100%',
+            transform: 'scale(1.2)',
+            left: '5%',
+        },
+        '@media (max-width: 600px)': {
+            transform: 'scale(1.5)',
+        },
+    },
+    '@media (max-width: 900px)': {
+        width: 'fit-content',
+        height: '100%',
+        textAlign: 'center',
+        position: 'relative'
+    },
 })
 
 const TextContent = styled(Box)({
     position: 'absolute',
-    left: '50%',
-    top: '20%',
-    height: '60%',
+    height: '50%',
     width: '40%',
     textAlign: 'center',
     fontFamily: "Trirong",
-    backgroundColor: 'rgba(33,33,33, 0.5)',
-
+    backgroundColor: 'rgba(33, 66, 44, 0.5)',
+    zIndex: 99,
+    left: '55%',
+    '@media (max-width: 900px)': {
+        left: '30%',
+        tranform: 'translateX(-50%)',
+    },
     '& h1': {
-        fontSize: 70
+        fontSize: 50
     },
 
     '& h4': {
-        fontSize: 30
+        fontSize: 15
     },
 
     '& h1, h4': {
@@ -145,14 +170,12 @@ const Hero = () => {
                         orbits: false,
                         destroy: true,
                         size: {
-                            value: 50,
+                            value: 25,
                             limit: 50,
                             random: false,
                             density: 1
                         },
-                        color: {
-                            value: 'none'
-                        },
+                        opacity: 0,
                         position: {
                             x: 25,
                             y: 50
@@ -160,14 +183,17 @@ const Hero = () => {
                     }
                 }}
             />
-            {/*  <ImgContainer>
+
+            <ImgContainer>
                 <img src={img} alt=""></img>
-            </ImgContainer> */}
+            </ImgContainer>
+
             <TextContent >
                 <h1>You have been called.</h1>
                 <h4>Enter into a world of green life and find something that speaks to you.</h4>
                 <ExploreButton variant="contained" color="success">Explore</ExploreButton>
             </TextContent>
+
         </Container>
     );
 }

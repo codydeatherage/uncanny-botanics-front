@@ -1,4 +1,5 @@
 import React from 'react'
+import { Box } from '@mui/material'
 import { Hero, Categories, CategoryItem, About } from '../components/home/index'
 import succulentIcon from '../assets/darksucc.svg'
 import plantIcon from '../assets/eye-plant.svg'

@@ -44,25 +44,25 @@ const NavLinks = styled(Box)({
 
 export default function NavBar({ children }) {
     return (
-        <Box>
-        <AppBar className="skinny-font" sx={{ maxHeight: 60, width: '100%', backgroundColor: '#212121' }} >
-            <Toolbar>
-                <ImgContainer component={Link} to="/" >
-                    <img src={icon} alt="" />
-                </ImgContainer>
-                <StoreName component={Link} to="/"> Uncanny Botanics </StoreName>
+        <Box sx={{width: '100vw', marginBottom: '200px' }}>
+            <AppBar className="skinny-font" sx={{ maxHeight: 60, width: '100%', backgroundColor: '#212121'}} >
+                <Toolbar sx={{marginBottom: '200px',width: '100%' }}>
+                    <ImgContainer component={Link} to="/" >
+                        <img src={icon} alt="" />
+                    </ImgContainer>
+                    <StoreName component={Link} to="/"> Uncanny Botanics </StoreName>
 
-                <NavLinks>
-                    <Link to="/shop" style={{ color: 'inherit', textDecoration: 'none' }}>
-                        <h1>Shop</h1>
-                    </Link>
-                    <h1>About</h1>
-                    <h1>Contact Us</h1>
-                </NavLinks>
-            </Toolbar>
-            
-        </AppBar>
-        {children}
+                    <NavLinks>
+                        <Link to="/shop" style={{ color: 'inherit', textDecoration: 'none' }}>
+                            <h1>Shop</h1>
+                        </Link>
+                        <h1>About</h1>
+                        <h1>Contact Us</h1>
+                    </NavLinks>
+                </Toolbar>
+
+            </AppBar>
+            {children}
         </Box>
     )
 }
