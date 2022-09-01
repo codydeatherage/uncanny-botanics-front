@@ -9,7 +9,6 @@ const Products = () => {
             sx={{
                 height: '500px',
                 minWidth: '480px',
-                outline: '1px solid red',
                 display: 'flex',
                 gap: '25px',
                 padding: '10px',

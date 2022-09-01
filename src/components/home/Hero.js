@@ -30,14 +30,14 @@ const ImgContainer = styled(Box)({
     height: '100%',
     width: '30%',
 
-    '& img':{
+    '& img': {
         height: '100%',
         width: 'auto',
         margin: 'auto'
     }
 })
 
-const TextContent  = styled(Box)({
+const TextContent = styled(Box)({
     position: 'absolute',
     left: '50%',
     top: '20%',
@@ -47,15 +47,15 @@ const TextContent  = styled(Box)({
     fontFamily: "Trirong",
     backgroundColor: 'rgba(33,33,33, 0.5)',
 
-    '& h1':{
+    '& h1': {
         fontSize: 70
     },
 
-    '& h4':{
+    '& h4': {
         fontSize: 30
-    },  
+    },
 
-    '& h1, h4':{
+    '& h1, h4': {
         color: 'white'
     }
 })
@@ -91,9 +91,9 @@ const Hero = () => {
                     },
                     background: {
                         color: {
-                            value: "#212121",
+                            value: "#00FFFFFF",
                         },
-                        image:  `url(${bg})`,
+                        image: `url(${bg})`,
                         repeat: 'no-repeat',
                         size: 'cover'
                     },
@@ -151,7 +151,7 @@ const Hero = () => {
                             density: 1
                         },
                         color: {
-                            value: "#EB5D2C"
+                            value: 'none'
                         },
                         position: {
                             x: 25,
@@ -160,9 +160,9 @@ const Hero = () => {
                     }
                 }}
             />
-            <ImgContainer>
+            {/*  <ImgContainer>
                 <img src={img} alt=""></img>
-            </ImgContainer>
+            </ImgContainer> */}
             <TextContent >
                 <h1>You have been called.</h1>
                 <h4>Enter into a world of green life and find something that speaks to you.</h4>

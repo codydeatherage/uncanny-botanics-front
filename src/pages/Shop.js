@@ -6,18 +6,18 @@ import Products from './../components/shop/Products'
 
 const Shop = () => {
     return (
-        <Grid container spacing={1}
+        <Grid container spacing={4}
             sx={{
-                justifyContent: 'center',
-                paddingTop: '80px',
+                paddingTop: '50px',
                 color: 'white',
-                fontSize: '4em'
+                fontSize: '4em',
+                margin: 0
             }}
         >
-            <Grid item xs={3} md={2}>
+            <Grid item xs={4} md={2}>
                 <ProductFilters >Filters go here</ProductFilters>
             </Grid>
-            <Grid item xs={8} >
+            <Grid item xs={8} sx={{ marginLeft: '1.5em' }}>
                 <Products >No products listed</Products>
             </Grid>
         </Grid>

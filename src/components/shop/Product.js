@@ -9,7 +9,8 @@ const ProductCard = styled(Card)({
     maxWidth: '450px',
     display: 'flex',
     justifyContent: 'space-between',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    flexGrow: 1
 
 })
 
